@@ -32,11 +32,12 @@ pip install -r requirements.txt
 python app.py
 ```
 
-**Docker**
+**Docker Compose**
 ```bash
-docker build -t payment-producer .
-docker run -d --name payment-producer --env-file .env payment-producer
-docker logs -f payment-producer
+docker compose up -d --build   # build + démarrage
+docker compose logs -f         # suivre les logs
+docker compose stop            # arrêt propre (flush / commit)
+docker compose down            # arrêt + suppression du conteneur
 ```
 
 ## Configuration
